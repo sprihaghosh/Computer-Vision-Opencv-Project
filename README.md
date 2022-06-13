@@ -20,6 +20,8 @@ Then, the markers are rotated to vertical positions by rotating them by angle of
 
 Angle is found by getting the slope between the centre and the mid point of one of the edges.
 
+The markers are cropped to remove extra white spaces using array slicing.
+
 Specific square boxes with diffrernt colours are identified through masking and contour operations.
 
 At a time, one coloured square box is masked and chosen as the roi. Its coordinates are taken as offsets and the relevant aruco marker is resized according to it. 
