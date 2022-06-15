@@ -24,8 +24,8 @@ The markers are cropped to remove extra white spaces using array slicing.
 
 Specific square boxes with diffrernt colours are identified through masking and contour operations.
 
-At a time, one coloured square box is masked and chosen as the roi. Its coordinates are taken as offsets and the relevant aruco marker is resized according to it. 
+At a time, one coloured square box is masked and chosen as the roi pr destination image. Its coordinates are taken as offsets and the relevant cropped aruco marker's corner coordinates is found . 
 
-The resized marker is then overlayed on the roi.
+The marker is wraped over destination coordinates through cv2.findHomography and cv2.warpPerspective.
 
-The above task is carried out for each of colours and the final image is obtained as the combination of all the overlayed outputs.
+The above task is carried out for each of colours and the final image is obtained as the combination of all the individual wraped outputs.
